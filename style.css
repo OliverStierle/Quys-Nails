@@ -1,0 +1,337 @@
+/*general*/
+* {
+    box-sizing: border-box;
+    /*outline: 1px solid red;*/
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    /* Use full width of the window */
+    margin: 0;
+    padding: 0 0;
+    /* Add some padding if needed */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better separation */
+}
+
+.kleingedrucktes {
+    font-size: small;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.column {
+    max-width: 100%;
+}
+
+/*nav bar*/
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    /* Adjust spacing as needed */
+    position: absolute;
+    /* Add position absolute */
+    right: 0;
+    /* Align to the right */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Adjust padding as needed */
+    background-color: #fff; /* Optional: background color for better visibility */
+    border-bottom: 1px solid #ddd; /* Optional: add a bottom border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better separation */
+}
+
+#logo {
+    margin: 0;
+}
+
+#logo>img {
+    max-height: auto;
+    width: 100%;
+    max-width: 100px;
+}
+
+/*home*/
+#home {
+    position: relative;
+    width: 100%;
+}
+
+.image-container {
+    display: flex;
+    overflow-x: hidden;
+    /* Disable horizontal scrolling */
+    align-items: center;
+    /* Center items vertically */
+    /*justify-content: center; /* Center items horizontally */
+    width: 70%;
+    /* Adjust the width to leave space for the buttons */
+    margin: 0 auto;
+    /* Center the container */
+}
+
+.image-wrapper {
+    flex: 0 0 calc(50% - 10px);
+    /* Adjust the width of each image wrapper to 50% of the container width minus margin */
+    margin: 0 5px;
+    /* Add some margin between the images */
+}
+
+.image-wrapper img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+#prevButton,
+#nextButton {
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 50%;
+}
+
+#prevButton {
+    left: 5px;
+}
+
+#nextButton {
+    right: 5px;
+}
+
+
+/*
+section#home>figure.pictures>img {
+    width: 200px;
+    display: inline-block;
+    padding: 10px;
+    margin: auto;
+    position: relative;
+}
+*/
+
+/*product & pricing*/
+#productlist {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /* Prevent content from protruding into other sections */
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    /* Ensure it spans the full width */
+}
+
+.product-details {
+    flex: 1;
+    margin-right: 20px;
+}
+
+aside {
+    flex: 0 0 auto;
+}
+
+.product {
+    border-bottom: 1px dashed #aaa;
+    margin-bottom: 25px;
+    width: 80%;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+.name {
+    padding-bottom: 4px;
+}
+
+aside>figure>img {
+    width: auto;
+    max-height: 600px;
+    float: right;
+    margin-right: -40px;
+}
+
+.price {
+    text-align: right;
+    font-weight: bold;
+}
+
+th {
+    text-align: left;
+}
+
+/*for indentation purposes*/
+.plus {
+    text-align: unset;
+    text-indent: 20px;
+}
+
+
+/*Anfahrt & Kontakt*/
+#anfahrt-kontakt {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+#anfahrt {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    border: 0;
+    vertical-align: middle;
+}
+
+#kontakt>p>span>a {
+    text-decoration: none;
+}
+
+
+/*footer*/
+footer {
+    text-align: center;
+    background-color: gray;
+    width: 100%;
+    position: relative;
+    padding: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    padding: clamp(2px, 2%, 20px) clamp(5px, 5%, 50px);
+    font-size: large;
+}
+
+/*this is for responsiveness with different window sizes*/
+
+/* Define minimum and maximum sizes */
+@media screen and (max-width: 600px) {
+
+    #prevButton,
+    #nextButton {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+
+    #prevButton,
+    #nextButton {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 1001px) {
+
+    #prevButton,
+    #nextButton {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Styles for Desktop, Ipad: 768px */
+@media screen and (min-width: 1024px) {
+
+    body {
+        font-size: 20px;
+        /* Increase the font size */
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    /* For the navbar */
+    .dropdown-content {
+        flex-direction: row;
+        /* Align links horizontally */
+        position: static;
+        /* Remove absolute positioning */
+    }
+
+    .dropdown-content a {
+        margin-right: 50px;
+        /* Adjust spacing between links */
+        font-size: 18px;
+        /* Increase the font size of the links */
+    }
+
+    #logo>img {
+        max-width: 200px;
+    }
+
+
+    /* Productlist */
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    .row:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    aside>figure>img {
+        max-height: 800px;
+        margin-right: -40px;
+    }
+
+
+    /* Anfahrt & Kontakt */
+    #anfahrt-kontakt {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* Align items vertically */
+    }
+
+    #anfahrt {
+        width: 50%;
+    }
+
+    #kontakt {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Align content vertically */
+    }
+}
